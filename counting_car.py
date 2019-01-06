@@ -19,7 +19,7 @@ class Sensor:
         self.car_number_detected=0
 
 
-Sensor1 = Sensor(Kordinat(1, 235), Kordinat(1080, 240), 300, 1080)
+Sensor1 = Sensor(Kordinat(1, 425), Kordinat(1080, 430), 500, 1080)
 video=cv2.VideoCapture("video2.mp4")
 fgbg=cv2.createBackgroundSubtractorMOG2()
 #fgbg=cv2.createBackgroundSubtractorMOG2()
@@ -28,7 +28,7 @@ font=cv2.FONT_HERSHEY_TRIPLEX
 while (1):
     ret,frame=video.read()
     # resize frame
-    cut_image=frame[300:600,100:1180]
+    cut_image=frame[100:600,100:1180]
     # make morphology for frame
     deleted_background=fgbg.apply(cut_image)
     opening_image=cv2.morphologyEx(deleted_background,cv2.MORPH_OPEN,kernel)
@@ -87,7 +87,7 @@ while (1):
     cv2.imshow("video", result)
     #cv2.imshow("mask_result", mask_result)
     #cv2.imshow("zeros_image", zeros_image)
-    cv2.imshow("opening_image", opening_image)
+    #cv2.imshow("opening_image", opening_image)
 
     k=cv2.waitKey(30) & 0xff
     if k == 27 :
