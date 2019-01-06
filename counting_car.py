@@ -24,7 +24,7 @@ video=cv2.VideoCapture("video2.mp4")
 fgbg=cv2.createBackgroundSubtractorMOG2()
 #fgbg=cv2.createBackgroundSubtractorMOG2()
 kernel=np.ones((5,5),np.uint8)
-font=cv2.FONT_HERSHEY_SIMPLEX
+font=cv2.FONT_HERSHEY_TRIPLEX
 while (1):
     ret,frame=video.read()
     # resize frame
@@ -81,7 +81,7 @@ while (1):
                       (0, 0, 255), thickness=cv2.FILLED)
 
 
-    cv2.putText(result,str(Sensor1.car_number_detected),(Sensor1.kordinat1.x,Sensor1.kordinat1.y+60),font,3,(255,255,255))
+    cv2.putText(result,str(Sensor1.car_number_detected),(Sensor1.kordinat1.x,Sensor1.kordinat1.y+60),font,2,(255,255,255))
 
 
     cv2.imshow("video", result)
